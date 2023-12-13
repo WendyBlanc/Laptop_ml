@@ -1,0 +1,267 @@
+[
+    {
+        "label": "absolute_import",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "division",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "imagehash",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "imagehash",
+        "description": "imagehash",
+        "detail": "imagehash",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "find_similar_images",
+        "kind": 2,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "def find_similar_images(userpaths, hashfunc=imagehash.average_hash):\n\tdef is_image(filename):\n\t\tf = filename.lower()\n\t\treturn f.endswith('.png') or f.endswith('.jpg') or \\\n\t\t\tf.endswith('.jpeg') or f.endswith('.bmp') or \\\n\t\t\tf.endswith('.gif') or '.jpg' in f or f.endswith('.svg')\n\timage_filenames = []\n\tfor userpath in userpaths:\n\t\timage_filenames += [os.path.join(userpath, path) for path in os.listdir(userpath) if is_image(path)]\n\timages = {}",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tf",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\tf = filename.lower()\n\t\treturn f.endswith('.png') or f.endswith('.jpg') or \\\n\t\t\tf.endswith('.jpeg') or f.endswith('.bmp') or \\\n\t\t\tf.endswith('.gif') or '.jpg' in f or f.endswith('.svg')\n\timage_filenames = []\n\tfor userpath in userpaths:\n\t\timage_filenames += [os.path.join(userpath, path) for path in os.listdir(userpath) if is_image(path)]\n\timages = {}\n\tfor img in sorted(image_filenames):\n\t\ttry:",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\timage_filenames",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\timage_filenames = []\n\tfor userpath in userpaths:\n\t\timage_filenames += [os.path.join(userpath, path) for path in os.listdir(userpath) if is_image(path)]\n\timages = {}\n\tfor img in sorted(image_filenames):\n\t\ttry:\n\t\t\thash = hashfunc(Image.open(img))\n\t\texcept Exception as e:\n\t\t\tprint('Problem:', e, 'with', img)\n\t\t\tcontinue",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\timages",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\timages = {}\n\tfor img in sorted(image_filenames):\n\t\ttry:\n\t\t\thash = hashfunc(Image.open(img))\n\t\texcept Exception as e:\n\t\t\tprint('Problem:', e, 'with', img)\n\t\t\tcontinue\n\t\tif hash in images:\n\t\t\tprint(img, '  already exists as', ' '.join(images[hash]))\n\t\t\tif 'dupPictures' in img:",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\thash",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\t\thash = hashfunc(Image.open(img))\n\t\texcept Exception as e:\n\t\t\tprint('Problem:', e, 'with', img)\n\t\t\tcontinue\n\t\tif hash in images:\n\t\t\tprint(img, '  already exists as', ' '.join(images[hash]))\n\t\t\tif 'dupPictures' in img:\n\t\t\t\tprint('rm -v', img)\n\t\timages[hash] = images.get(hash, []) + [img]\n\t# for k, img_list in six.iteritems(images):",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\timages[hash]",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\timages[hash] = images.get(hash, []) + [img]\n\t# for k, img_list in six.iteritems(images):\n\t# \tif len(img_list) > 1:\n\t# \t\tprint(\" \".join(img_list))\nif __name__ == '__main__':  # noqa: C901\n\timport os\n\timport sys\n\tdef usage():\n\t\tsys.stderr.write(\"\"\"SYNOPSIS: %s [ahash|phash|dhash|...] [<directory>]\nIdentifies similar images in the directory.",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\thashmethod",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\thashmethod = sys.argv[1] if len(sys.argv) > 1 else usage()\n\tif hashmethod == 'ahash':\n\t\thashfunc = imagehash.average_hash\n\telif hashmethod == 'phash':\n\t\thashfunc = imagehash.phash\n\telif hashmethod == 'dhash':\n\t\thashfunc = imagehash.dhash\n\telif hashmethod == 'whash-haar':\n\t\thashfunc = imagehash.whash\n\telif hashmethod == 'whash-db4':",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.average_hash\n\telif hashmethod == 'phash':\n\t\thashfunc = imagehash.phash\n\telif hashmethod == 'dhash':\n\t\thashfunc = imagehash.dhash\n\telif hashmethod == 'whash-haar':\n\t\thashfunc = imagehash.whash\n\telif hashmethod == 'whash-db4':\n\t\tdef hashfunc(img):\n\t\t\treturn imagehash.whash(img, mode='db4')",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.phash\n\telif hashmethod == 'dhash':\n\t\thashfunc = imagehash.dhash\n\telif hashmethod == 'whash-haar':\n\t\thashfunc = imagehash.whash\n\telif hashmethod == 'whash-db4':\n\t\tdef hashfunc(img):\n\t\t\treturn imagehash.whash(img, mode='db4')\n\telif hashmethod == 'colorhash':\n\t\thashfunc = imagehash.colorhash",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.dhash\n\telif hashmethod == 'whash-haar':\n\t\thashfunc = imagehash.whash\n\telif hashmethod == 'whash-db4':\n\t\tdef hashfunc(img):\n\t\t\treturn imagehash.whash(img, mode='db4')\n\telif hashmethod == 'colorhash':\n\t\thashfunc = imagehash.colorhash\n\telif hashmethod == 'crop-resistant':\n\t\thashfunc = imagehash.crop_resistant_hash",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.whash\n\telif hashmethod == 'whash-db4':\n\t\tdef hashfunc(img):\n\t\t\treturn imagehash.whash(img, mode='db4')\n\telif hashmethod == 'colorhash':\n\t\thashfunc = imagehash.colorhash\n\telif hashmethod == 'crop-resistant':\n\t\thashfunc = imagehash.crop_resistant_hash\n\telse:\n\t\tusage()",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.colorhash\n\telif hashmethod == 'crop-resistant':\n\t\thashfunc = imagehash.crop_resistant_hash\n\telse:\n\t\tusage()\n\tuserpaths = sys.argv[2:] if len(sys.argv) > 2 else '.'\n\tfind_similar_images(userpaths=userpaths, hashfunc=hashfunc)",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\t\thashfunc",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\t\thashfunc = imagehash.crop_resistant_hash\n\telse:\n\t\tusage()\n\tuserpaths = sys.argv[2:] if len(sys.argv) > 2 else '.'\n\tfind_similar_images(userpaths=userpaths, hashfunc=hashfunc)",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "\tuserpaths",
+        "kind": 5,
+        "importPath": ".venv.bin.find_similar_images",
+        "description": ".venv.bin.find_similar_images",
+        "peekOfCode": "\tuserpaths = sys.argv[2:] if len(sys.argv) > 2 else '.'\n\tfind_similar_images(userpaths=userpaths, hashfunc=hashfunc)",
+        "detail": ".venv.bin.find_similar_images",
+        "documentation": {}
+    },
+    {
+        "label": "pages",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "pages = [\"Context du projet\", \"Exploration de données\", \"Visualisation de donées\",\"Model prediction\"]\ndata = pd.read_csv(\"./laptops.csv\", encoding='ISO-8859-1')\ndata_cleaned = pd.read_csv(\"./laptops_cleaned.csv\").drop(columns=['Unnamed: 0'],axis=1)\nst.sidebar.title(\"Sommaire\")\npage = st.sidebar.radio(\"\", pages)\nif page == pages[0]: \n    st.image(\"./laptop.png\")\n    st.write(\"## Context du projet\")\n    st.write(\"Ce projet s'inscrit dans un contexte de ventes d'ordinateur. L'objectif est de prédire le prix des ordinateurs et de découvrir le prix de l'ordinateur a partir de ses features. \")\nelif page == pages[1]:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "data = pd.read_csv(\"./laptops.csv\", encoding='ISO-8859-1')\ndata_cleaned = pd.read_csv(\"./laptops_cleaned.csv\").drop(columns=['Unnamed: 0'],axis=1)\nst.sidebar.title(\"Sommaire\")\npage = st.sidebar.radio(\"\", pages)\nif page == pages[0]: \n    st.image(\"./laptop.png\")\n    st.write(\"## Context du projet\")\n    st.write(\"Ce projet s'inscrit dans un contexte de ventes d'ordinateur. L'objectif est de prédire le prix des ordinateurs et de découvrir le prix de l'ordinateur a partir de ses features. \")\nelif page == pages[1]:\n    st.write(\"## Exploration de données\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "data_cleaned",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "data_cleaned = pd.read_csv(\"./laptops_cleaned.csv\").drop(columns=['Unnamed: 0'],axis=1)\nst.sidebar.title(\"Sommaire\")\npage = st.sidebar.radio(\"\", pages)\nif page == pages[0]: \n    st.image(\"./laptop.png\")\n    st.write(\"## Context du projet\")\n    st.write(\"Ce projet s'inscrit dans un contexte de ventes d'ordinateur. L'objectif est de prédire le prix des ordinateurs et de découvrir le prix de l'ordinateur a partir de ses features. \")\nelif page == pages[1]:\n    st.write(\"## Exploration de données\")\n    st.write('')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "page",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "page = st.sidebar.radio(\"\", pages)\nif page == pages[0]: \n    st.image(\"./laptop.png\")\n    st.write(\"## Context du projet\")\n    st.write(\"Ce projet s'inscrit dans un contexte de ventes d'ordinateur. L'objectif est de prédire le prix des ordinateurs et de découvrir le prix de l'ordinateur a partir de ses features. \")\nelif page == pages[1]:\n    st.write(\"## Exploration de données\")\n    st.write('')\n    st.dataframe(data.head())\n    st.write('Shape du dataframe :')",
+        "detail": "app",
+        "documentation": {}
+    }
+]
